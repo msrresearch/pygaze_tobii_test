@@ -1,0 +1,11 @@
+SCREENNR = 0  # number of the screen used for displaying experiment
+DISPTYPE = 'psychopy'  # either 'psychopy' or 'pygame'
+DISPSIZE = (1920, 1080)  # canvas size
+SCREENSIZE = (52.7, 28.5)  # physical display size in cm
+MOUSEVISIBLE = False  # mouse visibility
+BGC = (198, 197, 197)  # backgroundcolour
+FGC = (0, 0, 0)  # foregroundcolour
+TRACKERTYPE = 'tobii-legacy'
+SACCVELTHRESH = 35  # degrees per second, saccade velocity threshold
+SACCACCTHRESH = 9500  # degrees per second, saccade acceleration threshold
+EVENTDETECTION = 'PyGaze'
