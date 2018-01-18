@@ -3,6 +3,7 @@ import time
 import argparse
 import csv
 import matplotlib.pyplot as plt
+from numpy import mean, std
 
 parser = argparse.ArgumentParser(description='A small test for pygaze using tobii eyetracker')
 parser.add_argument('-c', '--no_calibrate', default=False, action='store_true', help='skip calibration')
@@ -45,6 +46,11 @@ for row in tsv_list[8:]:
     if time_list:
         data_list.append(time-time_list[-1])
     time_list.append(time)
+
+time_mean = mean(data_list)
+time_std = std(data_list)
+print('mean of time difference: '+str(time_mean))
+print('standard diviation of time difference: '+str(time_std))
 
 plt.plot(time_list[1:], data_list, label='durian')
 plt.xlabel('Experiment time (ms)')
