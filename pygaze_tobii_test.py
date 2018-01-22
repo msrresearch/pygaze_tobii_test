@@ -41,7 +41,11 @@ with open('default_TOBII_output.tsv', 'rb') as tsv_file:
 
 data_list = []
 time_list = []
-for row in tsv_list[8:]:
+if args.no_calibrate:
+    data_start = 8
+else:
+    data_start = 18
+for row in tsv_list[data_start:]:
     time = float(row[0])
     if time_list:
         data_list.append(time-time_list[-1])
